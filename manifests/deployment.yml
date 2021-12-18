@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "clusterk1-f89d"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "clusterk1-f89d"
+  template:
+    metadata:
+      labels:
+        app: "clusterk1-f89d"
+    spec:
+      containers:
+        - name: "clusterk1-f89d"
+          image: "containerrueba.azurecr.io/clusterk1"
+          ports:
+          - containerPort: 80
